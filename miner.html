@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KALLAL</title>
+</head>
+<body>
+    <form id="stdform">
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" id="fname"><br><br>
+        
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" id="lname"><br><br>
+        
+        <label for="email">Email Id</label>
+        <input type="email" name="email" id="email"><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div id="users"></div>
+
+    <script>
+        let form = document.getElementById('stdform');
+        let fname = document.getElementById('fname');
+        let lname = document.getElementById('lname');
+        let email = document.getElementById('email');
+        let users = document.getElementById('users');
+        
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();   
+            let user1 = document.createElement('div');
+            user1.textContent = `First Name: ${fname.value}, Last Name: ${lname.value}, Email: ${email.value}`;
+            users.appendChild(user1);   
+            console.log(fname.value, lname.value, email.value);  
+            form.reset();  
+        });
+    </script>
+</body>
+</html>

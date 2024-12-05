@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        label {
+            margin: 10px;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+
+        #stdform {
+            text-align: center;
+            box-shadow: 11px 11px 11px 11px blue;
+            width: 30%;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20vh;
+            margin-left: 30vw;
+            height: 30vh;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="stdform">
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" id="fname"><br><br>
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" id="lname"><br><br>
+        <label for="email">Email Id</label>
+        <input type="email" name="email" id="email"><br><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <input type="submit" placeholder="Submit" onclick="getdata()">
+    </div>
+
+    <script>
+        let fname=document.getElementById('fname');
+        let lname=document.getElementById('lname');
+        let email=document.getElementById('email');
+        let password=document.getElementById('password');
+        function getdata(){
+            console.log(fname.value);
+            console.log(lname.value);
+            console.log(email.value);
+            console.log(password.value);
+            localStorage.setItem('fname',fname.value);
+            localStorage.setItem('lname',lname.value);
+            localStorage.setItem('email',email.value);
+            localStorage.setItem('password',password.value);
+            // sessionStorage data store..
+
+            sessionStorage.setItem('fname',fname.value);
+            sessionStorage.setItem('lname',lname.value);
+            sessionStorage.setItem('email',email.value);
+            sessionStorage.setItem('password',password.value);
+            console.log
+        }
+    </script>
+</body>
+</html>
